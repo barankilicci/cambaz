@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import { DashboardNavigation } from "../components/dashboard/dashboard-navigation";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { CircleUser, MenuIcon } from "lucide-react";
 import {
@@ -35,6 +35,7 @@ export default async function DashboardLayout({
           <DashboardNavigation />
         </nav>
         <Sheet>
+          <SheetTitle className="hidden"></SheetTitle>
           <SheetTrigger asChild>
             <Button
               className="shrink-0 md:hidden"
@@ -51,7 +52,7 @@ export default async function DashboardLayout({
           </SheetContent>
         </Sheet>
         <DropdownMenu>
-          <DropdownMenuTrigger>
+          <DropdownMenuTrigger asChild>
             <Button variant="secondary" size="icon" className="rounded-full">
               <CircleUser className="w-5 h-5" />
             </Button>
